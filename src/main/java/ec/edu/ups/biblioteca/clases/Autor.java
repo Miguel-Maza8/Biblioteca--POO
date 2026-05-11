@@ -9,7 +9,7 @@ package ec.edu.ups.biblioteca.clases;
  * @author Usuario
  */
 public class Autor {
-    
+private String nombre;
 private String nacionalidad;
 private String idiomaPrincipal;
 private int premios;
@@ -47,6 +47,17 @@ private int premios;
         this.premios = premios;
     }
 
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+    public void actualizarPremios(){
+        this.premios ++;
+        System.out.println("Los premios se actualizaron:"+ this.premios);
+    }
     @Override
     public String toString() {
         return "Autor{" + "nacionalidad=" + nacionalidad + ", idiomaPrincipal=" + idiomaPrincipal + ", premios=" + premios + '}';

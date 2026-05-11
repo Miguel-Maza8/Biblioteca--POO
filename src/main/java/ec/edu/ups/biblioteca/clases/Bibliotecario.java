@@ -4,30 +4,40 @@
  */
 package ec.edu.ups.biblioteca.clases;
 
+import java.time.LocalDate;
+
 /**
  *
  * @author ASUS_USER
  */
-public class Bibliotecario {
+public class Bibliotecario extends Persona {
     private String turno;
     private int puesto;
     private double sueldo;
     private Inventario inventario;
-    private String correoElectronico;
-    private String telefono;
-
     public Bibliotecario() {
     }
 
-    public Bibliotecario(String turno, int puesto, double sueldo, Inventario inventario, String correoElectronico, String telefono) {
-        this.turno = turno;
+    public Bibliotecario(
+             String nombre,
+             String apellido,
+             String cedula,
+             String fechaDeNacimiento,
+             String telefono,
+             String correoElectronico,
+             String turno,
+             int puesto,
+             double sueldo,
+             Inventario inventario
+      ) {  
+        super(nombre , apellido, cedula, fechaDeNacimiento, telefono, correoElectronico);
         this.puesto = puesto;
-        this.sueldo = sueldo;
-        this.inventario = inventario;
-        this.correoElectronico = correoElectronico;
-        this.telefono = telefono;
+        this.sueldo= sueldo;
+        this.turno= turno;
+        this.inventario = inventario; 
     }
-
+    
+    
     public String getTurno() {
         return turno;
     }
@@ -59,31 +69,20 @@ public class Bibliotecario {
     public void setInventario(Inventario inventario) {
         this.inventario = inventario;
     }
-
-    public String getCorreoElectronico() {
-        return correoElectronico;
-    }
-
-    public void setCorreoElectronico(String correoElectronico) {
-        this.correoElectronico = correoElectronico;
-    }
-
-    public String getTelefono() {
-        return telefono;
-    }
-
-    public void setTelefono(String telefono) {
-        this.telefono = telefono;
-    }
-
+    
     @Override
     public String toString() {
-        return "Bibliotecario{" + "turno=" + turno + ", puesto=" + puesto + ", sueldo=" + sueldo + ", inventario=" + inventario + ", correoElectronico=" + correoElectronico + ", telefono=" + telefono + '}';
+        return super.toString()+
+                "Bibliotecario{" + 
+                "turno=" + turno +
+                ", puesto=" + puesto + 
+                ", sueldo=" + sueldo + '}';
     }
     
-    
+}
+   
            
        
             
     
-}
+
